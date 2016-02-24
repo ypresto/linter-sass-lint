@@ -3,8 +3,8 @@
 path = require 'path'
 globule = require 'globule'
 {spawnSync} = require 'child_process'
-{getPath} = require 'consistent-path'
-env = Object.assign({}, process.env, {PATH: getPath()})
+consistentEnv = require 'consistent-env'
+env = Object.assign({}, process.env, consistentEnv())
 prefixPath = null
 
 module.exports =
